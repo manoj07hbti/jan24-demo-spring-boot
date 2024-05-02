@@ -10,4 +10,6 @@ public class Jan24DemoSpringBootApplication {
 		SpringApplication.run(Jan24DemoSpringBootApplication.class, args);
 	}
 
+
+
 }
