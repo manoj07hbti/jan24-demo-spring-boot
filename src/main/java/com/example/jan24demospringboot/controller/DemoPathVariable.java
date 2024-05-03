@@ -1,5 +1,6 @@
 package com.example.jan24demospringboot.controller;
 
+import com.example.jan24demospringboot.model.Employee;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +27,14 @@ public class DemoPathVariable {
 
             return "You are NOT eligible for voting in Pune..";
         }
+    }
+
+    @RequestMapping("/employee/{name}/{age}/{dept}")
+    public Employee getEmployee(@PathVariable String name,@PathVariable int age,@PathVariable String dept){
+
+        Employee employee= new Employee(name,age,dept);
+
+        return employee;
     }
 
 }
