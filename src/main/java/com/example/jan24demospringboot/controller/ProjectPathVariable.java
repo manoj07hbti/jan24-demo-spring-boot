@@ -1,5 +1,6 @@
 package com.example.jan24demospringboot.controller;
 
+import com.example.jan24demospringboot.model.Employee;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,10 +13,36 @@ public class ProjectPathVariable {
     //@RequestMapping("endpoint_name/{pathVariable_name}")
     //(@PathVariable DataType varName)
 
-@RequestMapping("/path_hello/{name}")
-    public String Hello(@PathVariable  String name){
+    @RequestMapping("/path_hello/{name}")
+    public String Hello(@PathVariable String name) {
 
-    return "Welcome to Spring Boot Path Variable-- "+name;
+        return "Welcome to Spring Boot Path Variable-- " + name;
+    }
+
+
+    // using controller--------
+    @RequestMapping("/employee")
+    public Employee getEmployee() {
+
+        Employee employee = new Employee("Ajeet", 4745, "Account");
+
+
+
+        return employee;
+    }
+
+
+
+
+    @RequestMapping("/employee/{name}/{empId}/{dept}")
+
+    public Employee getEmployee(@PathVariable String name,@PathVariable int empId, @PathVariable String dept){
+
+        Employee employee=new Employee(name,empId,dept);
+
+
+
+        return employee;
     }
 
 
@@ -127,3 +154,5 @@ public class ProjectPathVariable {
 
 
 }
+
+

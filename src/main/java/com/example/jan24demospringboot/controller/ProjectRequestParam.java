@@ -1,5 +1,6 @@
 package com.example.jan24demospringboot.controller;
 
+import com.example.jan24demospringboot.model.Employee;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -8,6 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ProjectRequestParam {
+
+
+
+    @RequestMapping("/param_employ")
+
+    public Employee getEmployee(@RequestParam String name, @RequestParam int empId, @RequestParam String dept){
+
+        Employee employee=new Employee(name,empId,dept);
+
+
+
+        return employee;
+    }
 
 
 
