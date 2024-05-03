@@ -72,7 +72,7 @@ public class DemoController {
             }
         }
         if (count ==2){
-            return "number is prime";
+            return "number is   prime";
         }else {
             return "no is not prime";
 
