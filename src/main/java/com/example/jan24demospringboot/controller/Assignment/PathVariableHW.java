@@ -1,10 +1,12 @@
-package com.example.jan24demospringboot.controller.Assignment_1;
+package com.example.jan24demospringboot.controller.Assignment;
 
+import com.example.jan24demospringboot.controller.Assignment.Models.Employee_Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 @RestController
 public class PathVariableHW {
@@ -78,5 +80,45 @@ public class PathVariableHW {
         }
         return integers;
     }
+    @RequestMapping("/EmpDetails/{id}/{name}/{gender}/{salary}")
+    public Employee_Model EmpDetails(@PathVariable int id, @PathVariable String name, @PathVariable char gender, @PathVariable int salary){
+        Employee_Model Employee=new Employee_Model(id,name,gender,salary);
+        return Employee;
+    }
+    @RequestMapping("/Emp/{id}/{name}/{gender}/{salary}")
+    public HashSet<Employee_Model> Employees(@PathVariable int id, @PathVariable String name, @PathVariable char gender, @PathVariable int salary){
+        HashSet<Employee_Model> employeeModels=new HashSet<>();
+        employeeModels.add(new Employee_Model(id,name,gender,salary));
+        return employeeModels;
+    }
+    @RequestMapping("/armstrong_PathVariable/{number}")
+    public String Armstrong_PathVariable(@PathVariable int number){
+        int temp=number;
+        int r,sum=0;
 
+        while (number>0) {
+            r = number % 10;
+            number = number / 10;
+            sum = sum + r * r * r;
+        }
+        if (temp==sum)
+            return number+" is Armstrong number";
+        else
+            return number+" is Not Armstrong number";
+    }
+    @RequestMapping("/Palindrome_PathVariable/{number}")
+    public String Palindrome(@PathVariable int number){
+        int o=number;
+        int r,n=0;
+        while (number!=0) {
+            r = number % 10;
+            n = n * 10 + r;
+            number = number / 10;
+        }
+        if (o==n){
+            return number+" is palindrome Numbeer";
+        }else {
+            return number+" is not a palindrome number";
+        }
+    }
 }

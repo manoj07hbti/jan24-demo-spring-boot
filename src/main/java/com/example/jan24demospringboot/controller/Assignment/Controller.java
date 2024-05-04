@@ -1,4 +1,4 @@
-package com.example.jan24demospringboot.controller.Assignment_1;
+package com.example.jan24demospringboot.controller.Assignment;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
