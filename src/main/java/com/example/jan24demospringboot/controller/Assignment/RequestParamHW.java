@@ -18,17 +18,31 @@ public class RequestParamHW {
                 "Division of " + num1 + " and " + num2 + " is " + (double) (num1 / num2);
     }
 
+
+
+
+
      @RequestMapping("/Employee")    //TODO Returning Employee object
     public Employee_Model Employee_Details(@RequestParam int id, @RequestParam String name, @RequestParam char gender, @RequestParam int salary) {
         Employee_Model Employee1 = new Employee_Model(id, name, gender, salary);
         return Employee1;
     }
+
+
+
     public HashSet<Employee_Model>Employee_List(int id,String name,char gender,int salary){
         HashSet<Employee_Model>employeeModels=new HashSet<>();
+
         Employee_Model e=new Employee_Model(id,name,gender,salary);
+
         employeeModels.add(e);
+
         return employeeModels;
     }
+
+
+
+
     @RequestMapping("/Armstrong_RequestParam")
     public String Armstrong_RequestParam(@RequestParam int Number){
         int Temp=Number;
@@ -45,6 +59,8 @@ public class RequestParamHW {
            return Number + "is not a Armstrong Number";
        }
     }
+
+
     @RequestMapping("/Palindrome_RequestParam")
     public String Palindrome(@RequestParam int number){
         int o=number;
