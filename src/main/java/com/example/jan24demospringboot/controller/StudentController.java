@@ -1,10 +1,7 @@
 package com.example.jan24demospringboot.controller;
 
 import com.example.jan24demospringboot.model.Student;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -18,9 +15,9 @@ public class StudentController {
     //C
 
     @RequestMapping("/add_student")
-    public String addStudent(@RequestParam String name,@RequestParam int rollNo,@RequestParam String section){
+    public String addStudent(@RequestBody Student student){
 
-        Student student= new Student(name,rollNo, section);
+        //Student student= new Student(name,rollNo, section);
 
         studentArrayList.add(student);
         return "Student added successfully...";
