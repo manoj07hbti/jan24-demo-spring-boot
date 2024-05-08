@@ -1,9 +1,12 @@
 package com.example.jan24demospringboot.controller;
 
+import com.example.jan24demospringboot.model.Employee;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
 
 @RestController
 public class Assignment3 {
@@ -103,5 +106,24 @@ public class Assignment3 {
             temp/=10;
         }
         return (num==rev?"Palindrome number":"not a palindrome number") ;
+    }
+
+    @RequestMapping("/employee_pv/{name}/{age}/{dept}")
+    public Employee getEmployee(@PathVariable String name, @PathVariable int age, @PathVariable String dept){
+        Employee employee = new Employee(name, age, dept)  ;
+        return  employee;
+    }
+
+    @RequestMapping("/employee_rp")
+    public Employee getEmployee1(@RequestParam String name, @RequestParam int age, @RequestParam String dept){
+        Employee employee1 = new Employee(name, age, dept)  ;
+        return  employee1;
+    }
+
+    @RequestMapping("/employeelist/{name}")
+    public ArrayList<String> employeeList(@PathVariable String name){
+        ArrayList<String> employee = new ArrayList<>();
+        employee.add(name);
+        return employee ;
     }
 }
