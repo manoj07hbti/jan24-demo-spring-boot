@@ -1,8 +1,7 @@
-package com.example.jan24demospringboot.Demo_Controller;
+package com.example.jan24demospringboot.Demo_Controller.Assignments;
 
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

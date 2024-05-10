@@ -1,4 +1,4 @@
-package com.example.jan24demospringboot.CRUD_cont;
+package com.example.jan24demospringboot.Demo_Controller.CRUD_cont;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
