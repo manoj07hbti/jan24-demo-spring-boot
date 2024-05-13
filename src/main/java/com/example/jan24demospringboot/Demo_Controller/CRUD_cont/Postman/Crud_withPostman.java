@@ -1,4 +1,4 @@
-package com.example.jan24demospringboot.Demo_Controller.CRUD_cont;
+package com.example.jan24demospringboot.Demo_Controller.CRUD_cont.Postman;
 
 import com.example.jan24demospringboot.modal.City;
 import org.springframework.web.bind.annotation.PathVariable;
