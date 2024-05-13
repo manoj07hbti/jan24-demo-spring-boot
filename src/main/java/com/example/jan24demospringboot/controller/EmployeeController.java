@@ -2,6 +2,7 @@ package com.example.jan24demospringboot.controller;
 
 import com.example.jan24demospringboot.model.Employee1;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +11,13 @@ import java.util.ArrayList;
 @RestController
 public class EmployeeController {
     ArrayList<Employee1> employee1ArrayList = new ArrayList<>();
+
+    // Assignment post request body
+    @RequestMapping("/postemployee")
+    public String postEmployee(@RequestBody Employee1 employee1){
+        employee1ArrayList.add(employee1);
+        return  "Employee added";
+    }
 
     @RequestMapping("/addemployee/{name}/{emp_id}/{dept}")
     public String addEmployee(@PathVariable String name,@PathVariable int emp_id,@PathVariable String dept){

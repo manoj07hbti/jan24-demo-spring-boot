@@ -1,10 +1,7 @@
 package com.example.jan24demospringboot.controller;
 
 import com.example.jan24demospringboot.model.City;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -12,6 +9,14 @@ import java.util.ArrayList;
 public class CityController {
 
     ArrayList<City> cityArrayList = new ArrayList<>();
+
+    //Assignment Post RequestBody
+    @RequestMapping("/postaddcity")
+    public String addCity(@RequestBody City city){
+
+        cityArrayList.add(city) ;
+        return "city added ... ";
+    }
 
     @RequestMapping("/addcity/{name}/{population}/{region}")
     public String addCity(@PathVariable String name,@PathVariable double population,@PathVariable String region){

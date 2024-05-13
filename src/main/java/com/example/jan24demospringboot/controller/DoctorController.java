@@ -3,16 +3,25 @@ package com.example.jan24demospringboot.controller;
 import com.example.jan24demospringboot.model.Doctor;
 import com.example.jan24demospringboot.model.Employee1;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
+import javax.print.Doc;
 import java.util.ArrayList;
 
 @RestController
 public class DoctorController {
 
     ArrayList<Doctor> doctorArrayList = new ArrayList<>();
+
+    //Assignment post Requestbody
+    @RequestMapping("/postdoctor")
+    public String postAddDoctor(@RequestBody Doctor doctor){
+        doctorArrayList.add(doctor);
+        return "Doctor added successfully";
+    }
 
     @RequestMapping("/add_doctor/{name}/{age}/{salary}")
     public String addDoctor(@PathVariable String name, @PathVariable int age, @PathVariable double salary){
