@@ -14,7 +14,7 @@ public class StudentController {
 
     //C
 
-    @RequestMapping("/add_student")
+    @PostMapping("/add_student")
     public String addStudent(@RequestBody Student student){
 
         //Student student= new Student(name,rollNo, section);
@@ -23,13 +23,13 @@ public class StudentController {
         return "Student added successfully...";
     }
 
-    @RequestMapping("/get_all_students")
+    @GetMapping("/get_all_students")
     public ArrayList<Student> getStudentArrayList(){
 
         return studentArrayList;
     }
 
-    @RequestMapping("update_std/{index}/{newName}")
+    @PutMapping("update_std/{index}/{newName}")
     public String updateStudentName(@PathVariable int index, @PathVariable String newName){
         //get the object
         Student student= studentArrayList.get(index);
@@ -39,7 +39,7 @@ public class StudentController {
 
     }
 
-    @RequestMapping("/delete_std/{index}")
+    @DeleteMapping("/delete_std/{index}")
     public String remove(@PathVariable int index){
         studentArrayList.remove(index);
         return "deleted successfully...";
