@@ -1,10 +1,7 @@
 package com.example.jan24demospringboot.Demo_Controller.CRUD_cont.Postman;
 
 import com.example.jan24demospringboot.modal.City;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -26,12 +23,23 @@ public class Crud_withPostman {
         return cityname;
     }
 
-    @RequestMapping("/updatecityn2/{index}/{newname}")
+ /*   @RequestMapping("/updatecityn2/{index}/{newname}")
     public String update2(@PathVariable int index, @PathVariable String newname) {
         City city = cityname.get(index);
         city.setName(newname);
         return "Success";
     }
+*/
+K
+    @PutMapping("/updatecityn2")
+    public String updateCity(@RequestBody City  request) {
+        int index = request.getIndex();
+        String newname = request.getNewname();
+        City city = cityname.get(index);
+        city.setName(newname);
+        return "Success";
+    }
+
 
     @RequestMapping("/updatepop2/{index}/{newpop}")
     public String updatepop2(@PathVariable int index, @PathVariable int newpop) {
