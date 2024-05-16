@@ -3,6 +3,7 @@ package com.example.jan24demospringboot.controller;
 
 import com.example.jan24demospringboot.model.Doctor;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,9 +14,9 @@ public class Doctor_Crud_Assignment {
 
     ArrayList<Doctor> doctorArrayList = new ArrayList<>();
 
-    @RequestMapping("/add_doctor/{name}/{age}/{salary}")
-    public String addDoctor(@PathVariable String name, @PathVariable int age, @PathVariable float salary){
-        Doctor doctor = new Doctor(name, age, salary);
+    @RequestMapping("/add_doctor")
+    public String addDoctor(@RequestBody Doctor doctor){
+       // Doctor doctor = new Doctor(name, age, salary);
         doctorArrayList.add(doctor);
         return "Doctor added ..";
     }

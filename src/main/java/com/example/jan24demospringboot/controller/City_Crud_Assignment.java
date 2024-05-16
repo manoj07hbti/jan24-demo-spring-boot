@@ -1,10 +1,7 @@
 package com.example.jan24demospringboot.controller;
 
 import com.example.jan24demospringboot.model.City;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -13,9 +10,9 @@ public class City_Crud_Assignment {
     ArrayList<City> cityArrayList = new ArrayList<>();
 
     //Create Data ----
-    @RequestMapping("/city_add/{name}/{population}")
-    public String addCity(@PathVariable String name, @PathVariable int population){
-        City city1 = new City(name,population);
+    @RequestMapping("/city_add")
+    public String addCity(@RequestBody City city1){
+        //City city1 = new City(name,population);
 
         cityArrayList.add(city1);
 
