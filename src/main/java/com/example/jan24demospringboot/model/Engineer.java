@@ -1,37 +1,39 @@
 package com.example.jan24demospringboot.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity(name = "Doctor_Jan24_Java")
-public class Doctor {
+@Entity(name = "ENGINEER_JAN24_JAVA")
+public class Engineer {
 
     @Id
     @GeneratedValue
+
     long Id;
     String name;
 
-    @Column(name ="Doctor_Age")
     int age;
 
-    float salary;
+    String dept;
 
-    // Default Constructor
+    Double Salary;
 
-    public Doctor() {
+    // Default constructor
+
+    public Engineer() {
     }
 
 
     // param constructor
 
-    public Doctor(String name, int age, float salary) {
+
+    public Engineer(String name, int age, String dept, Double salary) {
         this.name = name;
         this.age = age;
-        this.salary = salary;
+        this.dept = dept;
+        Salary = salary;
     }
-
 
     // getter and setter
 
@@ -52,11 +54,19 @@ public class Doctor {
         this.age = age;
     }
 
-    public float getSalary() {
-        return salary;
+    public String getDept() {
+        return dept;
     }
 
-    public void setSalary(float salary) {
-        this.salary = salary;
+    public void setDept(String dept) {
+        this.dept = dept;
+    }
+
+    public Double getSalary() {
+        return Salary;
+    }
+
+    public void setSalary(Double salary) {
+        Salary = salary;
     }
 }
