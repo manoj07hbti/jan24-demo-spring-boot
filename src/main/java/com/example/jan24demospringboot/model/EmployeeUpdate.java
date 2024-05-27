@@ -1,12 +1,29 @@
 package com.example.jan24demospringboot.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name = "EMPLOYEE_TABLE_JAN24_JAVA")
 public class EmployeeUpdate {
 
+    @Id // it will consider this class as db table
+    @GeneratedValue // // it will auto increment id filed in database
+
+    long id;
     String name;
 
+    @Column(name = "emp_Id")
     int empId;
 
     String emp_dept;
+
+    // Default Constructor
+
+    public EmployeeUpdate() {
+    }
+
 
     // param constructor
 
