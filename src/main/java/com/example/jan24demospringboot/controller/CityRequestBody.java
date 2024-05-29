@@ -15,7 +15,7 @@ public class CityRequestBody {
 
 
 
-    @RequestMapping("/add_city")
+    @RequestMapping("/city_add")
     public String addStudent(@RequestBody City city){
 
 
@@ -25,7 +25,7 @@ public class CityRequestBody {
         return "city data added successfully";
 
     }
-    @RequestMapping("/get_city")
+    @RequestMapping("/get_city_name")
     public ArrayList<City>getCityArrayList(){
 
         return cityArrayList;

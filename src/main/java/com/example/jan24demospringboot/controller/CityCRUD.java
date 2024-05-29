@@ -27,7 +27,7 @@ public class CityCRUD {
 
 
 
-        @RequestMapping("/getCity")
+        @RequestMapping("/get_City")
         public ArrayList<City>getCityArrayList(){
             return cityArrayList;
         }
@@ -37,7 +37,7 @@ public class CityCRUD {
 
 
 
-        @RequestMapping("/updateCityName")
+        @RequestMapping("/update_CityName")
     public String updateCityName(@RequestParam String newName, @RequestParam int index){
             City city= cityArrayList.get(index);
             city.setName(newName);
@@ -49,7 +49,7 @@ public class CityCRUD {
 
 
 
-        @RequestMapping("/updatePopulation")
+        @RequestMapping("/update_Population")
     public String updatePopulation(@RequestParam int newPopulation, int index){
             City city = cityArrayList.get(index);
             city.setPopulation(newPopulation);

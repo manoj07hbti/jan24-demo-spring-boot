@@ -10,7 +10,7 @@ public class CityHTTPMethod {
     ArrayList<City> cityArrayList = new ArrayList<>();
 
     //Create Data ----
-    @PostMapping("/addCity/{name}/{population}/{place}")
+    @PostMapping("/add_City/{name}/{population}/{place}")
     public String addCity(@RequestBody City city){
 
 
@@ -24,7 +24,7 @@ public class CityHTTPMethod {
 
 
 
-    @GetMapping("/getCity")
+    @GetMapping("/City_get")
     public ArrayList<City>getCityArrayList(){
         return cityArrayList;
     }
@@ -34,7 +34,7 @@ public class CityHTTPMethod {
 
 
 
-    @RequestMapping("/updateCityName")
+    @RequestMapping("/updateCity_Name")
     public String updateCityName(@RequestParam String newName, @RequestParam int index){
         City city= cityArrayList.get(index);
         city.setName(newName);
@@ -58,7 +58,7 @@ public class CityHTTPMethod {
 
 
 
-    @DeleteMapping("RemoveCity")
+    @DeleteMapping("Remove_city")
     public String removeCity(@RequestParam int index){
         cityArrayList.remove(index);
         return "City Name updated---";
