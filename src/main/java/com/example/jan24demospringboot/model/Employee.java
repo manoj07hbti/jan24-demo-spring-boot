@@ -1,11 +1,23 @@
 package com.example.jan24demospringboot.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name="Employ_DB_LIST")
 public class Employee {
+    @Id
+    @GeneratedValue
     String name;
     int empId;
+    @Column(name = "section")
     String dept;
-    //parameterized constructor
-    // R-click->Generate->Constructor-select all property
+
+
+    public Employee() {
+    }
+
     public Employee(String name, int empId, String dept) {
         this.name = name;
         this.empId = empId;

@@ -1,12 +1,26 @@
 package com.example.jan24demospringboot.model;
 
-public class Student {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity(name ="STUDENT_DB_TABLE")  // it will consider this class as DB table.
+public class Student {
+    @Id //it will make field as primary key
+
+    @GeneratedValue //it will auto increment id filled in database
+    long id;
     String name;
+    @Column(name="roll_No")
     int rollNo;
     String section;
-    //Using param constructor----
 
+    // default constructor
+
+
+    public Student() {
+    }
 
     public Student(String name, int rollNo, String section) {
         this.name = name;
