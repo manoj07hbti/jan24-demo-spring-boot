@@ -1,10 +1,22 @@
 package com.example.jan24demospringboot.modal;
 
+import javax.persistence.*;
+
+@Entity(name = "City")
 public class City {
+
+    @SequenceGenerator(name = "city_seq")
+    @Column(name = "ID")
+    @Id
+    @GeneratedValue
+    long id;
+
+    public City() {
+    }
 
     String name;
     int population;
-    int index;
+    int indX;
     String newname;
 
     public City(String name, int population) {
@@ -12,12 +24,12 @@ public class City {
         this.population = population;
     }
 
-    public int getIndex() {
-        return index;
+    public int getIndX() {
+        return indX;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
+    public void setIndX(int indX) {
+        this.indX = indX;
     }
 
     public String getNewname() {

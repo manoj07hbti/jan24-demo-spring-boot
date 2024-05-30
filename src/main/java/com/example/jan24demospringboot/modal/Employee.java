@@ -1,7 +1,15 @@
 package com.example.jan24demospringboot.modal;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name = "Emp1")
 public class Employee {
 
+    @Id
+    @GeneratedValue
+    long id;
     String name;
     int age ;
     double salary ;

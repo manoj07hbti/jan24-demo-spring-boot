@@ -30,10 +30,10 @@ public class Crud_withPostman {
         return "Success";
     }
 */
-K
+
     @PutMapping("/updatecityn2")
     public String updateCity(@RequestBody City  request) {
-        int index = request.getIndex();
+        int index = request.getIndX();
         String newname = request.getNewname();
         City city = cityname.get(index);
         city.setName(newname);
