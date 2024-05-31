@@ -1,5 +1,4 @@
-package com.example.jan24demospringboot.controller.Assignment.Models;
-
+package com.example.jan24demospringboot.Models;
 public class Emp {
     String name;
     int ID;

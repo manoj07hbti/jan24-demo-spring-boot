@@ -1,6 +1,9 @@
-package com.example.jan24demospringboot.controller.Assignment.Models;
+package com.example.jan24demospringboot.Models;
+
+
 
 public class Doctor_Model {
+
     String name;
     int age;
     int salary;

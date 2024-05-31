@@ -1,6 +1,6 @@
-package com.example.jan24demospringboot.controller.CrudOperation;
+package com.example.jan24demospringboot.CrudOperation;
 
-import com.example.jan24demospringboot.controller.Assignment.Models.Doctor_Model;
+import com.example.jan24demospringboot.Models.Doctor_Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 

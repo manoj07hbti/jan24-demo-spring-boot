@@ -1,6 +1,6 @@
-package com.example.jan24demospringboot.controller.CrudOperation;
+package com.example.jan24demospringboot.CrudOperation;
 
-import com.example.jan24demospringboot.controller.Assignment.Models.Emp;
+import com.example.jan24demospringboot.Models.Emp;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
