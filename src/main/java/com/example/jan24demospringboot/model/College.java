@@ -1,30 +1,28 @@
 package com.example.jan24demospringboot.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class DoctorTable {
-
-    @Id
-    @GeneratedValue
+public class College {
+    @Id @GeneratedValue
     long id;
 
     String name;
+    String city;
+    double fees;
 
-    int age;
 
-    double salary;
-
-    public DoctorTable() {
+    public College() {
     }
 
-    public DoctorTable(long id, String name, int age, double salary) {
+    public College(long id, String name, String city, double fees) {
         this.id = id;
         this.name = name;
-        this.age = age;
-        this.salary = salary;
+        this.city = city;
+        this.fees = fees;
     }
 
     public long getId() {
@@ -43,19 +41,19 @@ public class DoctorTable {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public String getCity() {
+        return city;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public double getSalary() {
-        return salary;
+    public double getFees() {
+        return fees;
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
+    public void setFees(double fees) {
+        this.fees = fees;
     }
 }
