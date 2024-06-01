@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -22,6 +23,20 @@ public class StudentService {
     public List<Student> getAllStudent(){
 
         return repository.findAll();// select * from table
+    }
+
+    public Optional<Student> getStudent(long id){
+
+        return repository.findById(id);// select * from table where id=?
+    }
+
+    public Optional<Student> getStudentByName(String name){
+         return Optional.ofNullable(repository.findByName(name));// //select * from table where name=?
+
+    }
+    public Optional<Student> getStudentByNameRoll(String name,int rollNo){
+        return Optional.ofNullable(repository.findByNameAndRollNo(name,rollNo));// //select * from table where name=?
+
     }
 
     public String updateName(String newName, long id){
