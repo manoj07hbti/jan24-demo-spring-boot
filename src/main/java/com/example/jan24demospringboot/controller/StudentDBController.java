@@ -3,9 +3,10 @@ package com.example.jan24demospringboot.controller;
 import com.example.jan24demospringboot.model.Student;
 import com.example.jan24demospringboot.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class StudentDBController {
@@ -16,10 +17,24 @@ public class StudentDBController {
 
         return service.addStudent(student);
 
+    }
 
+    @GetMapping("/students")
+    public List<Student> getAllStudent(){
 
-
+        return service.getAllStudent();
 
     }
+    @PatchMapping("/update_name")
+    public String updateName (@RequestParam String newName,@RequestParam long id){
+        return service.updateName(newName, id);
+    }
+
+
+    @DeleteMapping("/remove_std_db")
+    public String removeStudent(@RequestParam long id){
+        return service.removeStudent(id);
+    }
+
 
 }
