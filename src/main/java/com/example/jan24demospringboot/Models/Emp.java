@@ -1,4 +1,5 @@
 package com.example.jan24demospringboot.Models;
+
 public class Emp {
     String name;
     int ID;
