@@ -1,4 +1,4 @@
-package com.example.jan24demospringboot.CrudOperation;
+package com.example.jan24demospringboot.controller;
 
 import com.example.jan24demospringboot.Models.Emp;
 import org.springframework.web.bind.annotation.PathVariable;
