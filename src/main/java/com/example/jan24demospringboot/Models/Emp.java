@@ -1,9 +1,24 @@
 package com.example.jan24demospringboot.Models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name = "EMP_9PM")
 public class Emp {
-    String name;
+    @Id
+    @GeneratedValue
     int ID;
+    @Column
+    String name;
+    @Column
     String Dept;
+
+    //Default Constructor
+
+    public Emp() {
+    }
 
     public Emp(String name, int ID, String dept) {
         this.name = name;
