@@ -1,12 +1,12 @@
 package com.example.jan24demospringboot.controller;
 
 import com.example.jan24demospringboot.model.College;
-import com.example.jan24demospringboot.model.EmployeeUpdate;
 import com.example.jan24demospringboot.service.CollegeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class CollegeDBController {
@@ -26,10 +26,24 @@ public class CollegeDBController {
         return service.getAllCollege();
     }
 
-    @PatchMapping("/college_name_update")
-    public String update_college_name(@RequestParam String new_college_name , @RequestParam long id){
+    @GetMapping("/college/{id}")
 
-        return service.update_college_name(new_college_name, id);
+    public Optional<College> getCollege(@PathVariable long id){
+
+        return service.getCollege(id);
+    }
+
+    @GetMapping("/college_By_collegeName/{collegeName}")
+
+    public Optional<College> getCollegeByCollegeName(@PathVariable String collegeName){
+
+        return service.getCollegeByCollegeName(collegeName);
+    }
+
+    @PatchMapping("/college_name_update")
+    public String update_collegeName(@RequestParam String new_collegeName , @RequestParam long id){
+
+        return service.update_collegeName(new_collegeName, id);
     }
 
     @PatchMapping("/add_update")

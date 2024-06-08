@@ -14,7 +14,7 @@ public class College_Crud {
     //Create Data ----
     @PostMapping("/college_add")
     public String addCollege(@RequestBody College college1){
-        //College college1 = new College(college_name,add,student_strength);
+        //College college1 = new College(collegeName,add,student_strength);
 
         collegeArrayList.add(college1);
 
@@ -31,7 +31,7 @@ public class College_Crud {
     @RequestMapping("/Update_CollegeName/{newCollegeName}/{index}")
     public String updateCollegeName(@PathVariable String newCollegeName, @PathVariable int index){
         College college1= collegeArrayList.get(index);
-        college1.setCollege_name(newCollegeName);
+        college1.setCollegeName(newCollegeName);
         return "College Name Updated successfully--"+newCollegeName;
     }
 

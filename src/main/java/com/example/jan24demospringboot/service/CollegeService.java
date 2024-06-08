@@ -1,13 +1,12 @@
 package com.example.jan24demospringboot.service;
 
 import com.example.jan24demospringboot.model.College;
-import com.example.jan24demospringboot.model.EmployeeUpdate;
 import com.example.jan24demospringboot.repository.CollegeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CollegeService {
@@ -26,7 +25,17 @@ public class CollegeService {
         return repository.findAll();//select*from table
     }
 
-    public String update_college_name(String new_college_name , long id){
+    public Optional<College> getCollege(long id){
+
+        return repository.findById(id);//select * from table where id ?
+    }
+
+    public Optional<College> getCollegeByCollegeName(String collegeName){
+
+        return Optional.ofNullable(repository.findByCollegeName(collegeName));
+    }
+
+    public String update_collegeName(String new_collegeName , long id){
 
         // find record from DB
 
@@ -34,13 +43,13 @@ public class CollegeService {
 
         // update the College name with the help of setter method
 
-        college.setCollege_name(new_college_name);
+        college.setCollegeName(new_collegeName);
 
         // save back to the database again
 
         repository.save(college);
 
-        return "college name" +new_college_name+ "updated successfully";
+        return "college name" +new_collegeName+ "updated successfully";
 
     }
     public String add_update(String new_add , long id){

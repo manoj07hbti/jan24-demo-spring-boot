@@ -10,14 +10,14 @@ public class College {
 
     @Id
     @GeneratedValue
-    long Id;
+    long id;
 
-    String college_name;
+    String collegeName;
 
     @Column(name="address")
     String add;
 
-    int student_strength;
+    int studentStrength;
 
     // Default Constructor
 
@@ -27,31 +27,31 @@ public class College {
 
     // param constructor
 
-    public College(long id, String college_name, String add, int student_strength) {
-        Id = id;
-        this.college_name = college_name;
+
+    public College(long id, String collegeName, String add, int studentStrength) {
+        this.id = id;
+        this.collegeName = collegeName;
         this.add = add;
-        this.student_strength = student_strength;
+        this.studentStrength = studentStrength;
     }
 
-
-    // getter and setter
+    // getter setter
 
 
     public long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(long id) {
-        Id = id;
+        this.id = id;
     }
 
-    public String getCollege_name() {
-        return college_name;
+    public String getCollegeName() {
+        return collegeName;
     }
 
-    public void setCollege_name(String college_name) {
-        this.college_name = college_name;
+    public void setCollegeName(String collegeName) {
+        this.collegeName = collegeName;
     }
 
     public String getAdd() {
@@ -62,11 +62,11 @@ public class College {
         this.add = add;
     }
 
-    public int getStudent_strength() {
-        return student_strength;
+    public int getStudentStrength() {
+        return studentStrength;
     }
 
-    public void setStudent_strength(int student_strength) {
-        this.student_strength = student_strength;
+    public void setStudentStrength(int studentStrength) {
+        this.studentStrength = studentStrength;
     }
 }
